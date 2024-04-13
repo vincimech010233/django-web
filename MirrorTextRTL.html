@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Escritura en Espejo</title>
+  <style>
+    input[type="text"] {
+      direction: rtl;
+      /* Asegura que el texto se muestra de derecha a izquierda */
+      unicode-bidi: bidi-override;
+      /* Hace que el texto se comporte en modo de escritura de derecha a izquierda */
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Introduce texto para verlo en espejo y de derecha a izquierda:</h2>
+  <input type="text" id="inputText" oninput="mirrorText()" placeholder="Escribe aquí...">
+  <p id="mirrorText"></p>
+
+  <script>
+    function mirrorText() {
+      var input = document.getElementById('inputText').value;
+      var mirrored = input.split('').reverse().join('');
+      document.getElementById('mirrorText').textContent = mirrored;
+    }
+  </script>
+</body>
+
+</html>

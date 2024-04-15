@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>FizzBuzz en la Web</title>
+</head>
+
+<body>
+  <h1>Resultado de FizzBuzz</h1>
+  <ul id="fizzbuzzResults"></ul> <!-- Lista donde se mostrarán los resultados -->
+
+  <script>
+    // Seleccionamos el elemento UL donde se mostrarán los resultados
+    const resultList = document.getElementById('fizzbuzzResults');
+
+    for (let i = 1; i <= 100; i++) {
+      let result = ''; // Inicializamos la variable para almacenar el texto a mostrar
+
+      // Comprobamos los múltiplos y asignamos el valor correspondiente
+      if (i % 3 === 0 && i % 5 === 0) {
+        result = 'fizzbuzz';
+      } else if (i % 3 === 0) {
+        result = 'fizz';
+      } else if (i % 5 === 0) {
+        result = 'buzz';
+      } else {
+        result = i;
+      }
+
+      // Creamos un elemento LI para cada resultado y lo añadimos a la lista
+      const listItem = document.createElement('li');
+      listItem.textContent = result; // Establecemos el texto del elemento LI
+      resultList.appendChild(listItem); // Añadimos el LI al UL
+    }
+  </script>
+</body>
+
+</html>

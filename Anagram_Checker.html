@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anagram Checker</title>
+    <style>
+        .alert {
+            padding: 20px;
+            color: white;
+            margin-bottom: 15px;
+        }
+        .error { background-color: #f44336; } /* Red */
+        .success { background-color: #4CAF50; } /* Green */
+    </style>
+</head>
+<body>
+    <h1>Anagram Checker</h1>
+    <input type="text" id="word1" placeholder="Enter first word">
+    <input type="text" id="word2" placeholder="Enter second word">
+    <button onclick="checkAnagram()">Check</button>
+    <div id="alertBox" class="alert" style="display:none;"></div>
+
+    <script>
+        function checkAnagram() {
+            var word1 = document.getElementById("word1").value.replace(/\s+/g, '').toLowerCase();
+            var word2 = document.getElementById("word2").value.replace(/\s+/g, '').toLowerCase();
+
+            if (word1 === word2) {
+                showAlert('Error: Words are exactly the same.', 'error');
+                return;
+            }
+
+            var sortedWord1 = word1.split('').sort().join('');
+            var sortedWord2 = word2.split('').sort().join('');
+
+            if (sortedWord1 === sortedWord2) {
+                showAlert('OK: These are anagrams.', 'success');
+            } else {
+                showAlert('Error: These are not anagrams.', 'error');
+            }
+        }
+
+        function showAlert(message, type) {
+            var alertBox = document.getElementById("alertBox");
+            alertBox.style.display = 'block';
+            alertBox.innerHTML = message;
+            alertBox.className = 'alert ' + type;
+        }
+    </script>
+</body>
+</html>

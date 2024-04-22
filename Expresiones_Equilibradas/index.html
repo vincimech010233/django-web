@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificador de Expresiones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Verificador de Expresiones</h1>
+    <p>Ejemplos de uso:</p>
+    <ul>
+        <li>Expresión equilibrada: <code>{[a * (c + d)] - 5}</code></li>
+        <li>Expresión no equilibrada: <code>{a * (c + d)] - 5}</code></li>
+    </ul>
+    <input type="text" id="expression" placeholder="Ingresa la expresión aquí">
+    <button onclick="checkBalance()">Verificar</button>
+    <button onclick="loadExample('{[a * (c + d)] - 5}')">Cargar ejemplo equilibrado</button>
+    <button onclick="loadExample('{a * (c + d)] - 5}')">Cargar ejemplo no equilibrado</button>
+    <div id="result"></div>
+    <script src="script.js"></script>
+</body>
+</html>

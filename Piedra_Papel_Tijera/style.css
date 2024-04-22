@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+textarea, button {
+    display: block;
+    margin-top: 10px;
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#resultado {
+    font-size: 20px;
+    color: green;
+    margin-top: 20px;
+}

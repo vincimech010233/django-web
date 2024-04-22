@@ -1,0 +1,16 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+#primeNumbers {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+h1 {
+    color: #444;
+}
